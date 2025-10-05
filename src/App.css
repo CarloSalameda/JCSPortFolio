@@ -1,0 +1,84 @@
+:root{
+  --bg:#0D0D0D; /* almost black */
+  --text:#FFFFFF; /* pure white */
+  --accent1:#00FF85; /* neon green */
+  --accent2:#1E90FF; /* electric blue */
+  --hover:#FF0099; /* vivid pink */
+  --cta:#00FF85; /* align CTA with accent1 */
+  --dock-offset: 96px; /* approximate dock + margin height */
+}
+
+.app-bg{
+  background-color: transparent; /* allow LiquidEther to show across the page */
+  color: var(--text);
+  min-height:100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.text-primary-text{ color: var(--text); }
+.text-secondary-text{ color: rgba(228,228,228,.8); }
+
+.nav-blur{
+  background: rgba(44,44,44,.7);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.section{
+  padding: 4rem 0;
+  /* helpful when using sticky nav later */
+  scroll-margin-top: 90px;
+}
+.home-section{
+  padding-top: 6rem;
+  padding-bottom: calc(7rem + var(--dock-offset) / 2);
+  /* ensure About header is below the fold on initial load */
+  min-height: calc(100vh - var(--dock-offset));
+}
+.section-title{ color: var(--accent1); }
+.skills-list .badge-skill{
+  background: rgba(30,144,255,0.12);
+  color: var(--accent2);
+  border: 1px solid rgba(30,144,255,0.25);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .85rem;
+  display: inline-flex;
+  align-items: center;
+}
+.skills-list .badge-skill .skill-icon{ display: inline-flex; font-size: 1rem; line-height: 1; }
+.exp-item{ padding: .5rem 0; }
+.exp-item ul{ padding-left: 1.2rem; }
+.exp-item li{ margin: .25rem 0; }
+
+/* Custom CTA button variant using Bootstrap variables */
+.btn-cta{
+  --bs-btn-color: #0b0b0b;
+  --bs-btn-bg: var(--cta);
+  --bs-btn-border-color: var(--cta);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--cta) 80%, black);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--cta) 80%, black);
+  --bs-btn-active-bg: color-mix(in srgb, var(--cta) 65%, black);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--cta) 65%, black);
+  box-shadow: 0 0 20px rgba(0,255,133,0.2);
+}
+
+.resume-frame{ height: 420px; border: none; }
+
+/* Utility accents */
+a, .link-accent{ color: var(--accent2); }
+a:hover{ color: var(--hover); }
+
+
+/* Wrapper for InfiniteScroll component replacing inline styles */
+.infinite-scroll-wrap{
+  height: 500px;
+  position: relative;
+}
+

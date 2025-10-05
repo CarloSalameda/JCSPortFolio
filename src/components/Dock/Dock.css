@@ -1,0 +1,32 @@
+.dock{
+  position: fixed;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(13,13,13,0.6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  z-index: 20;
+}
+.dock__item{
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color .2s, background-color .2s, box-shadow .2s;
+}
+.dock__item:hover{ color: var(--hover); }
+.dock__item.is-active{
+  background: rgba(0,255,133,0.18);
+  color: var(--accent1);
+  box-shadow: 0 0 18px rgba(0,255,133,0.25);
+}
