@@ -8,6 +8,10 @@ import Dock from './components/Dock/index'
 import ProfileCard from './components/ProfileCard/index'
 import InfiniteScroll from './components/InfiniteScroll/index'
 import DecryptedText from './components/DecryptedText'
+// Asset imports (Vite will resolve to URLs)
+import myImageNoBg from './assets/myImageNoBg.png'
+import myImage from './assets/myImage.png'
+import resumePdf from './assets/Salameda, John Carlo - Resume 2025.pdf'
 // Icons
 import {
   SiAngular, SiReact, SiTypescript, SiDotnet, SiGit, SiGithub, SiVite, SiBootstrap, SiNodedotjs, SiExpress, SiPython, SiOpenai, SiPostman
@@ -158,7 +162,7 @@ function App() {
               <Nav.Link href="#home" onClick={(e: React.MouseEvent<HTMLElement>) => { e.preventDefault(); handleScroll('home') }}>Home</Nav.Link>
               <Nav.Link href="#about" onClick={(e: React.MouseEvent<HTMLElement>) => { e.preventDefault(); handleScroll('about') }}>About</Nav.Link>
               <Nav.Link href="#contact" onClick={(e: React.MouseEvent<HTMLElement>) => { e.preventDefault(); handleScroll('contact') }}>Contact</Nav.Link>
-              <Nav.Link href="/Salameda, John Carlo - Resume 2025.pdf" download>
+              <Nav.Link href={resumePdf} download>
                 <Button size="sm" variant="primary" className="ms-lg-3">Download Resume</Button>
               </Nav.Link>
             </Nav>
@@ -184,7 +188,7 @@ function App() {
               </p>
               <div className="d-flex gap-3 flex-wrap">
                 <Button variant="cta" onClick={() => handleScroll('contact')}>Get in touch</Button>
-                <Button variant="outline-light" href="/Salameda, John Carlo - Resume 2025.pdf" target="_blank">View Resume</Button>
+                <Button variant="outline-light" href={resumePdf} target="_blank">View Resume</Button>
               </div>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
@@ -287,9 +291,9 @@ function App() {
                 handle="JC Salameda"
                 status="Online"
                 // contactText="Contact Me"
-                avatarUrl="myImageNoBg.png"
-                miniAvatarUrl='MyImage.png'
-                iconUrl="MyImage.png"
+                avatarUrl={myImageNoBg}
+                miniAvatarUrl={myImage}
+                iconUrl={myImage}
                 showUserInfo={false}
                 enableTilt={true}
                 enableMobileTilt={true}
